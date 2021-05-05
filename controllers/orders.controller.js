@@ -8,8 +8,7 @@ const {Cart} = require('../models');
   const ordersByEmail = async (req, res) => {
 
     const {email} = req.body;
-
-    console.log(email);
+    
     try {
       message = await Orders.find({email:email});
       status = 200;
