@@ -5,6 +5,7 @@ const productCategoryController = require('./controllers/productCategory.control
 const productController = require('./controllers/product.controller');
 const filterController = require('./controllers/filter.controller');
 const cartController = require('./controllers/cart.controller');
+const orderController = require('./controllers/orders.controller');
 const passport = require('passport');
 const userRouter = express.Router();
 
@@ -27,9 +28,11 @@ userRouter.get('/category/:id', filterController.getProductByCategories);
 userRouter.get('/categoryById/:id', productCategoryController.getCategory);
 userRouter.post('/cart',cartController.addItems);
 userRouter.get('/cart',cartController.cartItems);
-userRouter.get('/cart/id',cartController.getCartById);
+userRouter.post('/cart/id',cartController.getCartById);
 userRouter.put('/cart/empty',cartController.emptyCart);
 userRouter.put('/cart/update',cartController.updateCart);
+userRouter.post('/order/add',orderController.addOrder);
+userRouter.post('/order',orderController.ordersByEmail);
 
 //define routes function
 const routes = (app) => {
