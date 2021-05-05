@@ -59,13 +59,6 @@ const {
           message="";
           let products=cat.products;
           if(exists(products,productsToAdd[0])){
-            /*for(let i=0;i<products.length;i++){
-                if(products[i][0]==productsToAdd[0][0]){
-                    products[i][2]+=1;
-                    message+="Logic verified\n";
-                    products[i][2]=products[i][2]+productsToAdd[0][2];
-                }
-            }*/
             cat.products=products;
             await cat.save();
           }
