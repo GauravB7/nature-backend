@@ -26,13 +26,13 @@ userRouter.get('/product/:id', productController.getProduct);
 userRouter.post('/product/add',option, productController.addProduct);
 userRouter.get('/category/:id', filterController.getProductByCategories);
 userRouter.get('/categoryById/:id', productCategoryController.getCategory);
-userRouter.post('/cart',cartController.addItems);
-userRouter.get('/cart',cartController.cartItems);
-userRouter.post('/cart/id',cartController.getCartById);
-userRouter.put('/cart/empty',cartController.emptyCart);
-userRouter.put('/cart/update',cartController.updateCart);
-userRouter.post('/order/add',orderController.addOrder);
-userRouter.post('/order',orderController.ordersByEmail);
+userRouter.post('/cart',option,cartController.addItems);
+userRouter.get('/cart',option,cartController.cartItems);
+userRouter.post('/cart/id',option,cartController.getCartById);
+userRouter.put('/cart/empty',option,cartController.emptyCart);
+userRouter.put('/cart/update',option,cartController.updateCart);
+userRouter.post('/order/add',option,orderController.addOrder);
+userRouter.post('/order',option,orderController.ordersByEmail);
 
 //define routes function
 const routes = (app) => {
