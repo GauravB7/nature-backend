@@ -70,7 +70,8 @@ const loginFunction = async (req, res) => {
       res.status(200).json({
         success: true,
         token: tokenObject.token,
-        expiresIn: tokenObject.expires
+        expiresIn: tokenObject.expires,
+        name:usersInfo[0].name
       });
     } else {
       // login pwd / email mismatch

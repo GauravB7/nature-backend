@@ -6,6 +6,8 @@ const productController = require('./controllers/product.controller');
 const filterController = require('./controllers/filter.controller');
 const cartController = require('./controllers/cart.controller');
 const orderController = require('./controllers/orders.controller');
+const contactController = require('./controllers/contactUs.controller');
+const feedbackController = require('./controllers/feedback.controller');
 const passport = require('passport');
 const userRouter = express.Router();
 
@@ -33,6 +35,8 @@ userRouter.put('/cart/empty',option,cartController.emptyCart);
 userRouter.put('/cart/update',option,cartController.updateCart);
 userRouter.post('/order/add',option,orderController.addOrder);
 userRouter.post('/order',option,orderController.ordersByEmail);
+userRouter.post('/contact',contactController.createContact);
+userRouter.post('/feedback',feedbackController.createFeedback);
 
 //define routes function
 const routes = (app) => {
