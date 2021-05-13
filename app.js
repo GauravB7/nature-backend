@@ -7,7 +7,7 @@ const routes = require('./routes');
 const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
-const PORT = 8081; //set the port for server
+
 
 require('dotenv').config(); //allows us to access the files on the system by sending environment variable
 
